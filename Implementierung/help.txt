@@ -1,0 +1,32 @@
+Denoise - Image Noise Reduction Program
+Usage: ./denoise [options]... [file]
+
+Options:
+    -V <integer>: Set the implementation version of the program. Default is SIMD.
+                  0: SIMD, 1: integer SISD, 2: accurate SISD
+    -B <integer>: Measures and outputs the runtime of the denoise process. 
+                  Optional argument for repetition. Default is no repetition.
+    -o <string>:  Generates an output file in PGM format with the specified name.
+    -c, --coeff <float,float,float>: 
+                  Set the coefficients of the grayscale conversion a, b, and c. Default values used if not set.
+    -t:           Run functional and performance tests (for debug purposes). No input file needed if set.
+    -h, --help:   Display this help message.
+
+Notes:
+-   Input image must be in 24bpp PPM (P6) format.
+-   Only 0, 1 or 2 are allowed as an argument for the option -V.
+-   integer SISD is faster but may alter pixel values by ±1 compared to accurate SISD.
+-   To enable the default SIMD implementation, ensure your CPU supports SSE4 extension. Otherwise, set the option "-V" to 1 or 2.
+-   Argument of option -B must be greater than 0.
+-   If -o option is not set, a file named "output.pgm" will be created and used as the output image.
+-   If -t option is set, other valid options are ignored and the program do not denoise any image.
+-   Default coefficients for grayscale conversion are the Rec. 709 luma coefficients.
+-   Output image is in 8bpp PGM (P5) format.
+
+Examples:
+    ./denoise image.ppm: 
+        Reduce noise of "image.ppm" using SIMD and write to output file "output.pgm".
+    ./denoise -V 1 -B 50 -o image_denoised.pgm image.ppm: 
+        Use integer SISD, repeat 50 times, measure runtime, and write to "image_denoised.pgm".
+    ./denoise -V 2 -B --coeff 3.2,5.9,0.9 image.ppm: 
+        Use accurate SISD, use (3.2R+5.9G+0.9B)/(3.2+5.9+0.9) for grayscale conversion, no repeat, measure runtime, write to "output.pgm"
