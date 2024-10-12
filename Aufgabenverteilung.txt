@@ -1,0 +1,38 @@
+Aufgaben Sprint 1
+Ashkan:		Graustufen Anfangen - Aufwand herausfinden - Struktur vorbereiten
+Osmanjan:	LaPlace Anfangen - Aufwand herausfinden - Struktur vorbereiten
+Konrad:		Kombination Anfangen - Aufwand herausfinden - Struktur vorbereiten
+Alle: 		Theorieteil - Fragen anschauen und erste Recherchen
+
+Meeting 18.12.:
+Ashkan macht Read file fertig udn integriert in den allgemeinen Code
+Osmanjan weichzeichnung
+Konrad Greyscale und baut Lapalce auf uint8_t um
+Nächstes Meeting 22.12. um 14 Uhr
+
+Meeting 22.12:
+Ashkan Optimierungen combine und greyscale
+Osmanjan Optimierungen Laplace und blur
+Konrad Tests, Kommentare, Bugs fixen
+Nächstes Meeting 29.12. 17 Uhr
+
+
+Meeting 03.01.:
+Einleitung 
+Lösungsansatz Osmanjan/gemeinsam
+Korrektheit Ashkan
+Performanzanalyse Konrad
+Zusammenfassung 
+Nächstes Meeting 10.1. 9 Uhr
+
+Meeting 10.1:
+Ashkan: In grayscale_simd auf float verzichten und integer benutzen
+Osmanjan: help.txt, callocs von blur nach main verschieben & -V in main.c, versuchen laplace in simd zu, 
+Konrad: functional_tests & performance_tests
+
+neue Aufteilung der Ausarbeitung:
+Einleitung Ashkan
+Lösungsansatz Osmanjan(primär)/Ashkan
+Korrektheit Konrad
+Performanzanalyse Konrad(primär)/Osmanjan
+Zusammenfassung Ashkan

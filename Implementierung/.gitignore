@@ -1,0 +1,9 @@
+*
+!samples/*
+!.gitignore
+!Makefile
+!*/
+!src/*
+!tests/*
+!help.txt
+!randomPPMGenerator.py
